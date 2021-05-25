@@ -3,8 +3,6 @@ $list_width: 800px;
 $list_width_mobile: 300px;
 $font_color_main: #ffffff;
 $font_color_hover: #d1a954;
-$list_transition: transform 0.5s linear 0.2s;
-$menu_close_position_left: 20px;
 
 @mixin header_size($h: 100vh, $w: 100vw) {
   min-height: $h;
@@ -86,6 +84,8 @@ $menu_close_position_left: 20px;
 
 .header__nav__menu_close {
   display: none;
+  background-color: transparent;
+  border: none;
 }
 
 .header__nav__menu_close_x {
@@ -170,26 +170,23 @@ $menu_close_position_left: 20px;
   .header__nav__menu_open {
     display: block;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
   }
 
-  .header__nav__menu_close {
+  .header__nav__menu_close-evidently {
     display: block;
     width: 20px;
     height: 20px;
-    position: absolute;
+    position: fixed;
     top: 20px;
-    left: -$menu_close_position_left;
+    left: $list_width_mobile - 35px;
     z-index: 1;
     cursor: pointer;
-    transition: $list_transition;
   }
 
-  .header__nav__input:checked ~ .header__nav__menu_close {
-    transform: translateX($list_width_mobile - $menu_close_position_left);
-  }
-
-  .header__nav__input:not(:checked) ~ .header__nav__menu_close {
-    transform: translateX(-$menu_close_position_left);
+  .header__nav__menu_close-hidden {
+    display: none;
   }
 
   .header__nav__list {
@@ -197,23 +194,21 @@ $menu_close_position_left: 20px;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: #333333;
-    position: absolute;
-    top: 0;
-    left: -$list_width_mobile;
-    bottom: 0;
+    margin-bottom: 0;
     width: 100%;
     max-width: $list_width_mobile;
     padding: 20vh 5vw;
-    margin-bottom: 0;
-    transition: $list_transition;
   }
 
-  .header__nav__input:checked ~ .header__nav__list {
-    transform: translateX($list_width_mobile);
+  .header__nav__list-evidently {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
   }
 
-  .header__nav__input:not(:checked) ~ .header__nav__list {
-    transform: translateX(0);
+  .header__nav__list-hidden {
+    display: none;
   }
 
   .header__nav__list__item {

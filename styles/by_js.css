@@ -79,6 +79,8 @@
 
 .header__nav__menu_close {
   display: none;
+  background-color: transparent;
+  border: none;
 }
 
 .header__nav__menu_close_x {
@@ -168,8 +170,10 @@
   .header__nav__menu_open {
     display: block;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
   }
-  .header__nav__input:checked ~ .header__nav__menu_close {
+  .header__nav__menu_close-evidently {
     display: block;
     width: 20px;
     height: 20px;
@@ -179,7 +183,7 @@
     z-index: 1;
     cursor: pointer;
   }
-  .header__nav__input:not(:checked) ~ .header__nav__menu_close {
+  .header__nav__menu_close-hidden {
     display: none;
   }
   .header__nav__list {
@@ -199,17 +203,17 @@
     max-width: 300px;
     padding: 20vh 5vw;
   }
-  .header__nav__input:checked ~ .header__nav__list {
+  .header__nav__list-evidently {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
   }
-  .header__nav__input:not(:checked) ~ .header__nav__list {
+  .header__nav__list-hidden {
     display: none;
   }
   .header__nav__list__item {
     margin-bottom: 5vh;
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=by_js.css.map */

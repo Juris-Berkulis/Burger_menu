@@ -46,7 +46,7 @@ $font_color_hover: #d1a954;
 
 .header {
   @include header_size;
-  background-color: slategrey;
+  background-color: #2d0505;
   @include header_padding;
 }
 
@@ -119,6 +119,23 @@ $font_color_hover: #d1a954;
   text-align: center;
   margin-top: 40vh;
   color: $font_color_main;
+}
+
+.header__text {
+  color: $font_color_main;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.header__text__link {
+  color: $font_color_main;
+}
+
+.header__text__link:hover {
+  color: $font_color_hover;
+  text-decoration: none;
 }
 
 @media (max-width: 1150px) {
