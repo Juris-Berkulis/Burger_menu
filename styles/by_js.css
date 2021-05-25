@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/roboto-light-webfont.woff2") format("woff2"), url("../fonts/Roboto/roboto-light-webfont.woff") format("woff"), url("../fonts/Roboto/Roboto-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.center {
+  padding: 0 calc((100% - 1110px) / 2);
+}
+
+.header {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #2d0505;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.header__nav {
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav__list {
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav__input {
+  display: none;
+}
+
+.header__nav__menu_open {
+  display: none;
+}
+
+.header__nav__menu_open__img {
+  fill: #ffffff;
+}
+
+.header__nav__menu_open:hover .header__nav__menu_open__img {
+  fill: #d1a954;
+}
+
+.header__nav__menu_close {
+  display: none;
+  background-color: transparent;
+  border: none;
+}
+
+.header__nav__menu_close_x {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.header__nav__menu_close:hover .header__nav__menu_close_x {
+  color: #d1a954;
+}
+
+.header__nav__list__item {
+  list-style: none;
+}
+
+.header__nav__list__item__link,
+.header__nav__phone {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.header__nav__list__item__link:hover,
+.header__nav__phone:hover {
+  color: #d1a954;
+}
+
+.header__title {
+  font-size: 40px;
+  line-height: 44px;
+  text-align: center;
+  margin-top: 40vh;
+  color: #ffffff;
+}
+
+.header__text {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.header__text__link {
+  color: #ffffff;
+}
+
+.header__text__link:hover {
+  color: #d1a954;
+  text-decoration: none;
+}
+
+@media (max-width: 1150px) {
+  .center {
+    padding: 5vh calc((100% - 800px) / 2);
+  }
+  .header__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__nav__list {
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 1vh;
+  }
+}
+
+@media (max-width: 680px) {
+  .center {
+    padding: 5vh 10vw;
+  }
+  .header__nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .header__nav__menu_open {
+    display: block;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+  .header__nav__menu_close-evidently {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 20px;
+    left: 265px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .header__nav__menu_close-hidden {
+    display: none;
+  }
+  .header__nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background-color: #333333;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 300px;
+    padding: 20vh 5vw;
+  }
+  .header__nav__list-evidently {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .header__nav__list-hidden {
+    display: none;
+  }
+  .header__nav__list__item {
+    margin-bottom: 5vh;
+  }
+}
+/*# sourceMappingURL=by_js.css.map */

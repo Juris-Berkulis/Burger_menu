@@ -1,33 +1,13 @@
-$header_pad: 5vh;
-$list_width: 800px;
-$list_width_mobile: 300px;
-$font_color_main: #ffffff;
-$font_color_hover: #d1a954;
-
-@mixin header_size($h: 100vh, $w: 100vw) {
-  min-height: $h;
-  width: $w;
-}
-
-@mixin header_padding($pt: $header_pad, $pb: $header_pad) {
-  padding-top: $pt;
-  padding-bottom: $pb;
-}
-
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto/roboto-light-webfont.woff2") format("woff2"),
-    url("../fonts/Roboto/roboto-light-webfont.woff") format("woff"),
-    url("../fonts/Roboto/Roboto-Light.ttf") format("ttf");
+  src: url("../fonts/Roboto/roboto-light-webfont.woff2") format("woff2"), url("../fonts/Roboto/roboto-light-webfont.woff") format("woff"), url("../fonts/Roboto/Roboto-Light.ttf") format("ttf");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"),
-    url("../fonts/Roboto/roboto-regular-webfont.woff") format("woff"),
-    url("../fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+  src: url("../fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
 }
@@ -35,7 +15,8 @@ $font_color_hover: #d1a954;
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
@@ -45,25 +26,39 @@ $font_color_hover: #d1a954;
 }
 
 .header {
-  @include header_size;
+  min-height: 100vh;
+  width: 100vw;
   background-color: #2d0505;
-  @include header_padding;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .header__nav {
   font-size: 16px;
   line-height: 22px;
   text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__nav__list {
-  width: $list_width;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__nav__input {
@@ -75,11 +70,11 @@ $font_color_hover: #d1a954;
 }
 
 .header__nav__menu_open__img {
-  fill: $font_color_main;
+  fill: #ffffff;
 }
 
 .header__nav__menu_open:hover .header__nav__menu_open__img {
-  fill: $font_color_hover;
+  fill: #d1a954;
 }
 
 .header__nav__menu_close {
@@ -87,7 +82,7 @@ $font_color_hover: #d1a954;
 }
 
 .header__nav__menu_close_x {
-  color: $font_color_main;
+  color: #ffffff;
   font-size: 40px;
   line-height: 40px;
   font-family: "Roboto", sans-serif;
@@ -95,7 +90,7 @@ $font_color_hover: #d1a954;
 }
 
 .header__nav__menu_close:hover .header__nav__menu_close_x {
-  color: $font_color_hover;
+  color: #d1a954;
 }
 
 .header__nav__list__item {
@@ -105,12 +100,12 @@ $font_color_hover: #d1a954;
 .header__nav__list__item__link,
 .header__nav__phone {
   text-decoration: none;
-  color: $font_color_main;
+  color: #ffffff;
 }
 
 .header__nav__list__item__link:hover,
 .header__nav__phone:hover {
-  color: $font_color_hover;
+  color: #d1a954;
 }
 
 .header__title {
@@ -118,11 +113,11 @@ $font_color_hover: #d1a954;
   line-height: 44px;
   text-align: center;
   margin-top: 40vh;
-  color: $font_color_main;
+  color: #ffffff;
 }
 
 .header__text {
-  color: $font_color_main;
+  color: #ffffff;
   font-size: 24px;
   line-height: 28px;
   text-align: center;
@@ -130,84 +125,91 @@ $font_color_hover: #d1a954;
 }
 
 .header__text__link {
-  color: $font_color_main;
+  color: #ffffff;
 }
 
 .header__text__link:hover {
-  color: $font_color_hover;
+  color: #d1a954;
   text-decoration: none;
 }
 
 @media (max-width: 1150px) {
   .center {
-    padding: $header_pad calc((100% - 800px) / 2);
+    padding: 5vh calc((100% - 800px) / 2);
   }
-
   .header__nav {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-
   .header__nav__list {
     width: 90%;
-    max-width: $list_width;
+    max-width: 800px;
     margin-bottom: 1vh;
   }
 }
 
 @media (max-width: 680px) {
   .center {
-    padding: $header_pad 10vw;
+    padding: 5vh 10vw;
   }
-
   .header__nav {
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-
   .header__nav__menu_open {
     display: block;
     cursor: pointer;
   }
-
   .header__nav__input:checked ~ .header__nav__menu_close {
     display: block;
     width: 20px;
     height: 20px;
     position: fixed;
     top: 20px;
-    left: $list_width_mobile - 35px;
+    left: 265px;
     z-index: 1;
     cursor: pointer;
   }
-
   .header__nav__input:not(:checked) ~ .header__nav__menu_close {
     display: none;
   }
-
   .header__nav__list {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     background-color: #333333;
     margin-bottom: 0;
     width: 100%;
-    max-width: $list_width_mobile;
+    max-width: 300px;
     padding: 20vh 5vw;
   }
-
   .header__nav__input:checked ~ .header__nav__list {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
   }
-
   .header__nav__input:not(:checked) ~ .header__nav__list {
     display: none;
   }
-
   .header__nav__list__item {
     margin-bottom: 5vh;
   }
 }
+/*# sourceMappingURL=style.css.map */
