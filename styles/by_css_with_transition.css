@@ -173,7 +173,7 @@
     display: block;
     width: 20px;
     height: 20px;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: -20px;
     z-index: 1;
@@ -203,7 +203,7 @@
         -ms-flex-align: start;
             align-items: flex-start;
     background-color: #333333;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -300px;
     bottom: 0;
